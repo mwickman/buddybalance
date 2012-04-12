@@ -12,6 +12,9 @@ end
 module Buddybalance
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
+
+    config.generators { |g| g.template_engine :haml }
+
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
