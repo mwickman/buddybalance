@@ -79,5 +79,15 @@ describe Buddy do
     before { @buddy.password = @buddy.password_confirmation = "f"*5 }
     it { should be_invalid }
   end
+
+  describe "email downcasing" do
+    let(:mixed_case_email) { "bRiAn@gMaIl.com" }
+    it "should all be lower case" do
+      @buddy.email = mixed_case_email
+      @buddy.save
+      @buddy.reload.email.should == mixed_case_email.downcase
+    end
+  end
+
 end
 

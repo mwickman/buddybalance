@@ -13,7 +13,7 @@ class Buddy < ActiveRecord::Base
   attr_accessible :name, :email, :bio, :password, :password_confirmation
   has_secure_password
 
-  before_save { |buddy| buddy.email = email.downcase } 
+  before_save { self.email.downcase! }
 
   validates :name, :presence => true, :length => { :maximum => 50 }
   validates :email, :presence => true, :uniqueness => { :case_sensitive => false }

@@ -1,0 +1,8 @@
+- if @buddy.errors.any?
+  #error_explanation
+    .alert.alert-error
+      The form contains
+      =pluralize(@buddy.errors.count, "error")
+    %ul
+      - @buddy.errors.full_messages.each do |e|
+        %li= e

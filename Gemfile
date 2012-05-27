@@ -27,9 +27,15 @@ end
 
 group :development do
   gem 'annotate', '~> 2.4.1.beta'
-  gem 'rspec-rails', '2.6.1'
+  gem 'rspec-rails', '2.10.1'
 end
+
+group :test do
+  gem 'capybara', '1.1.2'
+end
+
 gem 'jquery-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,4 +1,8 @@
 Buddybalance::Application.routes.draw do
+  get "static_pages/home"
+
+  # get "static_pages/signup"
+  match '/signup', :to => 'buddies#new'
   resources :transactions
   resources :buddies
 
