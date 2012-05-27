@@ -1,5 +1,6 @@
 Buddybalance::Application.routes.draw do
-  get "buddies/new"
+  resources :transactions
+  resources :buddies
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

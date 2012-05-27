@@ -6,8 +6,10 @@ gem 'rails', '3.2.1'
 gem 'pg'
 gem 'thin'
 
+# for authentication
+gem 'bcrypt-ruby', '3.0.1'
+
 # Front-end stuff
-gem 'haml'
 gem 'haml-rails'
 
 #  Gems used only for assets and not required

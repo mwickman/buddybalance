@@ -11,11 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120408002816) do
+ActiveRecord::Schema.define(:version => 20120527165507) do
 
   create_table "buddies", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+  end
+
+  add_index "buddies", ["email"], :name => "index_buddies_on_email", :unique => true
+
+  create_table "transactions", :force => true do |t|
+    t.datetime "date"
+    t.decimal  "amount"
+    t.boolean  "confirmed"
+    t.integer  "from"
+    t.integer  "to"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
