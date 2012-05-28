@@ -1,8 +1,14 @@
 Buddybalance::Application.routes.draw do
-  get "static_pages/home"
+  # home page is the sign in page
+  root to: 'sessions#new'
 
-  # get "static_pages/signup"
-  match '/signup', :to => 'buddies#new'
+  # Static pages
+  match '/signup',    to: 'buddies#new'
+  match '/signin',    to: 'sessions#new'
+  match '/signout',   to: 'sessions#destroy', via: :delete
+  match '/about/',    to: 'static_pages#about'
+
+  resources :sessions, only: [:new, :create, :destroy]
   resources :transactions
   resources :buddies
 

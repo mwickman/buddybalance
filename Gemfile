@@ -32,6 +32,7 @@ end
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'factory_girl_rails', '~> 3.0'
 end
 
 gem 'jquery-rails'
