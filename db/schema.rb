@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(:version => 20120528133445) do
 
   create_table "transactions", :force => true do |t|
     t.datetime "date"
-    t.decimal  "amount"
+    t.decimal  "amount",     :precision => 8, :scale => 2
     t.boolean  "confirmed"
-    t.integer  "from"
-    t.integer  "to"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "creator"
+    t.integer  "target"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
   end
 
 end
